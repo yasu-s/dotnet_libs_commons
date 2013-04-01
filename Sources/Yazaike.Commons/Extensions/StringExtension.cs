@@ -137,8 +137,8 @@
         /// Converts the string representation of a number to its 64-bit signed integer equivalent.
         /// </summary>
         /// <param name="value">
-        /// </param>
         /// A string containing a number to convert. 
+        /// </param>
         /// <returns>
         /// A 64-bit signed integer equivalent to the number contained in value.
         /// </returns>
