@@ -210,5 +210,43 @@
             else
                 throw new FormatException("value is not in the correct format.");
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <param name="ci"></param>
+        /// <param name="option"></param>
+        /// <returns></returns>
+        public static bool EqualsEx(this string source, string target, CompareInfo ci, CompareOptions options)
+        {
+            if (ci == null) throw new ArgumentNullException("ci is null.");
+
+            return (ci.Compare(source, target, options) == 0);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static bool EqualsEx(this string source, string target)
+        {
+            return source.EqualsEx(target, CultureInfo.CurrentCulture.CompareInfo, CompareOptions.None);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public static bool EqualsEx(this string source, string target, CompareOptions options)
+        {
+            return source.EqualsEx(target, CultureInfo.CurrentCulture.CompareInfo, options);
+        }
     }
 }
