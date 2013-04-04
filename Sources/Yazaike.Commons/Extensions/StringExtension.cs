@@ -212,6 +212,28 @@
         }
 
         /// <summary>
+        /// Converts the specified string representation of a date 
+        /// and time to its DateTime equivalent and returns a value that indicates 
+        /// whether the conversion succeeded.
+        /// </summary>
+        /// <param name="value">
+        /// A string containing the value to convert. 
+        /// </param>
+        /// <returns>
+        /// true if the s parameter was converted successfully<br />
+        /// otherwise, false.
+        /// </returns>
+        public static DateTime ToDateTime(this string value)
+        {
+            DateTime result;
+
+            if (DateTime.TryParse(value, out result))
+                return result;
+            else
+                throw new FormatException("value is not in the correct format.");
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="source"></param>
