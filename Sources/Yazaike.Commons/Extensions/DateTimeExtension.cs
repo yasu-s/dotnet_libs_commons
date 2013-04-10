@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using Yazaike.Commons.Utils;
 
     /// <summary>
     /// DateTime Extension Class
@@ -17,7 +18,7 @@
         /// <returns>the beginning of the month</returns>
         public static DateTime GetBeginningOfMonth(this DateTime date)
         {
-            return new DateTime(date.Year, date.Month, 1);
+            return DateTimeUtil.GetBeginningOfMonth(date);
         }
 
         /// <summary>
@@ -27,10 +28,7 @@
         /// <returns>the end of the month</returns>
         public static DateTime GetEndOfMonth(this DateTime date)
         {
-            if ((DateTime.MaxValue.Year == date.Year) && (DateTime.MaxValue.Month == date.Month))
-                return DateTime.MaxValue.Date;
-            else
-                return Microsoft.VisualBasic.DateAndTime.DateSerial(date.Year, date.Month + 1, 0);
+            return DateTimeUtil.GetEndOfMonth(date);
         }
 
         /// <summary>
@@ -40,7 +38,7 @@
         /// <returns>the beginning of the year</returns>
         public static DateTime GetBeginningOfYear(this DateTime date)
         {
-            return new DateTime(date.Year, 1, 1);
+            return DateTimeUtil.GetBeginningOfYear(date);
         }
 
         /// <summary>
@@ -50,7 +48,7 @@
         /// <returns>the end of the year</returns>
         public static DateTime GetEndOfYear(this DateTime date)
         {
-            return new DateTime(date.Year, 12, 31);
+            return DateTimeUtil.GetEndOfYear(date);
         }
 
         /// <summary>
@@ -60,7 +58,7 @@
         /// <returns>the beginning of the japan fiscal year</returns>
         public static DateTime GetBeginningOfJapanFiscalYear(this DateTime date)
         {
-            return new DateTime(date.Year, 4, 1);
+            return DateTimeUtil.GetBeginningOfJapanFiscalYear(date);
         }
 
         /// <summary>
@@ -68,9 +66,9 @@
         /// </summary>
         /// <param name="date">DateTime object.</param>
         /// <returns>the end of the japan fiscal year</returns>
-        public static DateTime GetEndOfJapanFiscalYear(this DateTime date)
+        public static DateTime GetBeginningOfJapanFiscalYear(this DateTime date)
         {
-            return new DateTime(date.Year, 3, 31);
+            return DateTimeUtil.GetBeginningOfJapanFiscalYear(date);
         }
     }
 }
