@@ -51,5 +51,32 @@
             value = "ｱｲｳｴｵ";
             Assert.AreEqual("アイウエオ", value.ToWide(CultureInfo.CurrentCulture.LCID));
         }
+
+        [TestMethod]
+        public void TestOr()
+        {
+            string value = "ABC";
+            Assert.IsFalse(value.Or(null));
+            Assert.IsFalse(value.Or(string.Empty));
+            Assert.IsTrue(value.Or("ABC"));
+            Assert.IsTrue(value.Or("abc", "ABC"));
+            Assert.IsFalse(value.Or("abc", "123"));
+            Assert.IsFalse(value.Or("abc", "ＡＢＣ", "１２３"));
+            Assert.IsTrue(value.Or("abc", "ＡＢＣ", "ABC"));
+        }
+
+        [TestMethod]
+        public void TestAnd()
+        {
+            string value = "ABC";
+            Assert.IsFalse(value.And(null));
+            Assert.IsFalse(value.And(string.Empty));
+            Assert.IsTrue(value.And("ABC"));
+            Assert.IsFalse(value.And("abc", "ABC"));
+            Assert.IsFalse(value.And("abc", "123"));
+            Assert.IsFalse(value.And("abc", "ＡＢＣ", "１２３"));
+            Assert.IsFalse(value.And("abc", "ＡＢＣ", "ABC"));
+            Assert.IsTrue(value.And("ABC", "ABC", "ABC"));
+        }
     }
 }

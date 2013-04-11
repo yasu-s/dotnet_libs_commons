@@ -66,9 +66,9 @@
         /// </summary>
         /// <param name="date">DateTime object.</param>
         /// <returns>the end of the japan fiscal year</returns>
-        public static DateTime GetBeginningOfJapanFiscalYear(this DateTime date)
+        public static DateTime GetEndOfJapanFiscalYear(this DateTime date)
         {
-            return DateTimeUtil.GetBeginningOfJapanFiscalYear(date);
+            return DateTimeUtil.GetEndOfJapanFiscalYear(date);
         }
     }
 }
