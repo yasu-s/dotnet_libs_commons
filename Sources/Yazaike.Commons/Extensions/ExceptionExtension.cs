@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Yazaike.Commons.Extensions
+﻿namespace Yazaike.Commons.Extensions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     /// <summary>
     /// Exception Extension Class
     /// </summary>
     public static class ExceptionExtension
     {
         /// <summary>
-        /// 
+        /// Find 
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="ex"></param>
+        /// <typeparam name="T">Find Exception Type.</typeparam>
+        /// <param name="ex">Exception object.</param>
         /// <returns></returns>
         public static Exception FindInnerException<T>(this Exception ex) where T : Exception
         {

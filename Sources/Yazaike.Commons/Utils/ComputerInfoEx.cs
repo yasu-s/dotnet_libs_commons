@@ -88,6 +88,38 @@
         }
 
         /// <summary>
+        /// Gets Domain Name.
+        /// </summary>
+        public static string DomainName
+        {
+            get { return Environment.UserDomainName; }
+        }
+
+        /// <summary>
+        /// Gets Login User Name.
+        /// </summary>
+        public static string LoginUserName
+        {
+            get { return Environment.UserName; }
+        }
+
+        /// <summary>
+        /// Gets Join Domain.
+        /// </summary>
+        public static bool IsJoinDomain
+        {
+            get { return !MachineName.Equals(DomainName); }
+        }
+
+        /// <summary>
+        /// Gets Framework Version.
+        /// </summary>
+        public static string FrameworkVersion
+        {
+            get { return Environment.Version.ToString(); }
+        }
+
+        /// <summary>
         /// Gets Total Physical Memory.
         /// </summary>
         public static ulong TotalPhysicalMemory

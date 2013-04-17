@@ -70,5 +70,25 @@
         {
             return DateTimeUtil.GetEndOfJapanFiscalYear(date);
         }
+
+        public static bool GreaterThan(this DateTime t1, DateTime t2, DateTimeCompare compare)
+        {
+            return DateTimeUtil.GreaterThan(t1, t2, compare);
+        }
+
+        public static bool GreaterThanOrEqual(DateTime t1, DateTime t2, DateTimeCompare compare)
+        {
+            return DateTimeUtil.GreaterThanOrEqual(t1, t2, compare);
+        }
+
+        public static bool LessThan(DateTime t1, DateTime t2, DateTimeCompare compare)
+        {
+            return DateTimeUtil.LessThan(t1, t2, compare);
+        }
+
+        public static bool LessThanOrEqual(DateTime t1, DateTime t2, DateTimeCompare compare)
+        {
+            return DateTimeUtil.LessThanOrEqual(t1, t2, compare);
+        }
     }
 }
