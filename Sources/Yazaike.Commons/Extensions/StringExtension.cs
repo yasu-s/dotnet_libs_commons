@@ -270,5 +270,51 @@
         {
             return source.EqualsEx(target, CultureInfo.CurrentCulture.CompareInfo, options);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static byte[] GetBytes(this string value)
+        {
+            return value.GetBytes(Encoding.Unicode);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        public static byte[] GetBytes(this string value, Encoding encoding)
+        {
+            if (encoding == null) throw new ArgumentNullException("encoding is null.");
+
+            return encoding.GetBytes(value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static int GetByteSize(this string value)
+        {
+            return value.GetByteSize(Encoding.Unicode);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        public static int GetByteSize(this string value, Encoding encoding)
+        {
+            if (encoding == null) throw new ArgumentNullException("encoding is null.");
+
+            return value.GetBytes(encoding).Length;
+        }
     }
 }

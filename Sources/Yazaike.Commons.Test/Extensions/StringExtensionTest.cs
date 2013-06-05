@@ -78,5 +78,14 @@
             Assert.IsFalse(value.And("abc", "ＡＢＣ", "ABC"));
             Assert.IsTrue(value.And("ABC", "ABC", "ABC"));
         }
+
+        [TestMethod]
+        public void TestGetByteSize()
+        {
+            Assert.AreEqual(1, "1".GetByteSize(Encoding.Default));
+            Assert.AreEqual(2, "あ".GetByteSize(Encoding.Default));
+            Assert.AreEqual(2, "1".GetByteSize(Encoding.Unicode));
+            Assert.AreEqual(2, "あ".GetByteSize(Encoding.Unicode));
+        }
     }
 }
