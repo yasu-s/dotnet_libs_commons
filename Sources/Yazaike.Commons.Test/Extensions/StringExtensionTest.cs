@@ -87,5 +87,28 @@
             Assert.AreEqual(2, "1".GetByteSize(Encoding.Unicode));
             Assert.AreEqual(2, "あ".GetByteSize(Encoding.Unicode));
         }
+
+        [TestMethod]
+        public void TestIsNull()
+        {
+            string value = null;
+            Assert.IsTrue(value.IsNull());
+
+            value = "abc";
+            Assert.IsFalse(value.IsNull());
+        }
+
+        [TestMethod]
+        public void TestIsNullOrEmpty()
+        {
+            string value = null;
+            Assert.IsTrue(value.IsNullOrEmpty());
+
+            value = "abc";
+            Assert.IsFalse(value.IsNullOrEmpty());
+
+            value = string.Empty;
+            Assert.IsTrue(value.IsNullOrEmpty());
+        }
     }
 }
