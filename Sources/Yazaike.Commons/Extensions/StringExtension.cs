@@ -336,5 +336,28 @@
         {
             return string.IsNullOrEmpty(value);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="arg0"></param>
+        /// <returns></returns>
+        public static string Format(this string format, object arg0)
+        {
+            return string.Format(format, arg0);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public static string Format(this string format, params object[] args)
+        {
+            return string.Format(format, args);
+        }
+
     }
 }
