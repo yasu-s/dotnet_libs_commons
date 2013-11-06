@@ -110,5 +110,46 @@
             value = string.Empty;
             Assert.IsTrue(value.IsNullOrEmpty());
         }
+
+        [TestMethod]
+        public void TestContainsNumber()
+        {
+            string value = "abc";
+            Assert.IsFalse(value.ContainsNumber());
+
+            value = "123";
+            Assert.IsTrue(value.ContainsNumber());
+
+            value = "123abc";
+            Assert.IsTrue(value.ContainsNumber());
+
+            value = "abc123";
+            Assert.IsTrue(value.ContainsNumber());
+
+            value = "abc123def";
+            Assert.IsTrue(value.ContainsNumber());
+        }
+
+        [TestMethod]
+        public void TestContainsAlphabet()
+        {
+            string value = "abc";
+            Assert.IsTrue(value.ContainsAlphabet());
+
+            value = "ABC";
+            Assert.IsTrue(value.ContainsAlphabet());
+
+            value = "123";
+            Assert.IsFalse(value.ContainsAlphabet());
+
+            value = "123abc";
+            Assert.IsTrue(value.ContainsAlphabet());
+
+            value = "ABC123";
+            Assert.IsTrue(value.ContainsAlphabet());
+
+            value = "abc123DEF";
+            Assert.IsTrue(value.ContainsAlphabet());
+        }
     }
 }

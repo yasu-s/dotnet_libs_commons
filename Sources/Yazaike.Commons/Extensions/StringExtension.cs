@@ -5,6 +5,7 @@
     using System.Globalization;
     using System.Linq;
     using System.Text;
+    using System.Text.RegularExpressions;
     using Microsoft.VisualBasic;
 
     /// <summary>
@@ -12,6 +13,13 @@
     /// </summary>
     public static class StringExtension
     {
+
+        /// <summary></summary>
+        private static Regex regNumber = new Regex("[0-9]");
+
+        /// <summary></summary>
+        private static Regex regAlphabet = new Regex("[a-zA-Z]");
+
         /// <summary>
         /// Converts wide (full-width) characters in the string to narrow (half-width) characters.
         /// </summary>
@@ -239,7 +247,7 @@
         /// <param name="source"></param>
         /// <param name="target"></param>
         /// <param name="ci"></param>
-        /// <param name="option"></param>
+        /// <param name="options"></param>
         /// <returns></returns>
         public static bool EqualsEx(this string source, string target, CompareInfo ci, CompareOptions options)
         {
@@ -332,9 +340,29 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        public static bool IsEmpty(this string value)
+        {
+            return string.Empty.Equals(value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool IsNullOrEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool IsNullOrWhiteSpace(this string value)
+        {
+            return string.IsNullOrEmpty(value) || string.Empty.Equals(value.Trim());
         }
 
         /// <summary>
@@ -359,5 +387,24 @@
             return string.Format(format, args);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool ContainsNumber(this string value)
+        {
+            return regNumber.Matches(value).Count > 0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool ContainsAlphabet(this string value)
+        {
+            return regAlphabet.Matches(value).Count > 0;
+        }
     }
 }

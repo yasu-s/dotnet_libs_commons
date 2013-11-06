@@ -231,21 +231,49 @@
             return Compare(t1, t2, compare) == 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool GreaterThan(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return Compare(t1, t2, compare) > 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool GreaterThanOrEqual(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return Compare(t1, t2, compare) >= 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool LessThan(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return Compare(t1, t2, compare) < 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool LessThanOrEqual(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return Compare(t1, t2, compare) <= 0;
