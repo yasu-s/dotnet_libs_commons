@@ -1,7 +1,5 @@
-﻿namespace Yazaike.Commons
+﻿namespace System
 {
-    using System;
-
     /// <summary>
     /// DateTime Compare Enum
     /// </summary>

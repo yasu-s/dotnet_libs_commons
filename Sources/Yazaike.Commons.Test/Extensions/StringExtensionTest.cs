@@ -6,8 +6,7 @@
     using System.Linq;
     using System.Text;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Yazaike.Commons.Extensions;
-
+    
     /// <summary>
     /// StringExtensionTest の概要の説明
     /// </summary>

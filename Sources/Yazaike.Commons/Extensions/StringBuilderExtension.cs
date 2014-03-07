@@ -1,4 +1,4 @@
-﻿namespace Yazaike.Commons.Extensions
+﻿namespace System.Text
 {
     using System;
     using System.Collections.Generic;

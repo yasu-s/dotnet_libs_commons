@@ -1,9 +1,9 @@
-﻿namespace Yazaike.Commons.Extensions
+﻿namespace System
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+
     using Yazaike.Commons.Utils;
 
     /// <summary>
@@ -71,21 +71,49 @@
             return DateTimeUtil.GetEndOfJapanFiscalYear(date);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool GreaterThan(this DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return DateTimeUtil.GreaterThan(t1, t2, compare);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool GreaterThanOrEqual(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return DateTimeUtil.GreaterThanOrEqual(t1, t2, compare);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool LessThan(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return DateTimeUtil.LessThan(t1, t2, compare);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="compare"></param>
+        /// <returns></returns>
         public static bool LessThanOrEqual(DateTime t1, DateTime t2, DateTimeCompare compare)
         {
             return DateTimeUtil.LessThanOrEqual(t1, t2, compare);
