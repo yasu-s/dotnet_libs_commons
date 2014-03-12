@@ -328,7 +328,7 @@
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The string to test. </param>
         /// <returns></returns>
         public static bool IsNull(this string value)
         {
@@ -342,46 +342,55 @@
         /// <returns></returns>
         public static bool IsEmpty(this string value)
         {
-            return string.Empty.Equals(value);
+            return (value != null) && (value.Length == 0);
         }
 
         /// <summary>
-        /// 
+        /// Indicates whether the specified string is null or an Empty string.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The string to test. </param>
+        /// <returns>
+        /// true if the value parameter is null or an empty string (""); 
+        /// otherwise, false.
+        /// </returns>
         public static bool IsNullOrEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);
         }
 
         /// <summary>
-        /// 
+        /// Indicates whether a specified string is null, empty, or consists only of white-space characters.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The string to test.</param>
+        /// <returns>
+        /// true if the value parameter is null or String.Empty, or if value consists exclusively of white-space characters. 
+        /// </returns>
         public static bool IsNullOrWhiteSpace(this string value)
         {
             return string.IsNullOrEmpty(value) || string.Empty.Equals(value.Trim());
         }
 
         /// <summary>
-        /// 
+        /// Replaces one or more format items in a specified string with the string representation of a specified object.
         /// </summary>
-        /// <param name="format"></param>
-        /// <param name="arg0"></param>
-        /// <returns></returns>
+        /// <param name="format">A composite format string (see Remarks). </param>
+        /// <param name="arg0">The object to format. </param>
+        /// <returns>
+        /// A copy of format in which any format items are replaced by the string representation of arg0.
+        /// </returns>
         public static string Format(this string format, object arg0)
         {
             return string.Format(format, arg0);
         }
 
         /// <summary>
-        /// 
+        /// Replaces the format item in a specified string with the string representation of a corresponding object in a specified array.
         /// </summary>
-        /// <param name="format"></param>
-        /// <param name="args"></param>
-        /// <returns></returns>
+        /// <param name="format">A composite format string (see Remarks).</param>
+        /// <param name="args">An object array that contains zero or more objects to format. </param>
+        /// <returns>
+        /// A copy of format in which the format items have been replaced by the string representation of the corresponding objects in args.
+        /// </returns>
         public static string Format(this string format, params object[] args)
         {
             return string.Format(format, args);
